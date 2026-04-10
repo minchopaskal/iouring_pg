@@ -297,7 +297,7 @@ int main(int argc, char **argv) {
     while (true) {
         // before sleep...
         struct __kernel_timespec ts;
-        ts.tv_nsec = 1000000; /* 1ms */
+        ts.tv_nsec = 1000;
         ts.tv_sec = 0;
         struct io_uring_cqe *cqe = nullptr;
         int ret = io_uring_wait_cqes(&ring, &cqe, 1024, &ts, nullptr);
